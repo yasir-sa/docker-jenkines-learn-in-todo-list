@@ -1,0 +1,19 @@
+/* உங்க டோட்டல் அப்ளிகேஷனுக்கும் தேவையான பொதுவான கிளீன் ஸ்டைல்ஸ் */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f1f3f6; /* ஒரு மென்மையான லைட் பேக்கிரவுண்ட் */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Todo பாக்ஸை ஸ்கிரீனின் நடுவில் கொண்டுவர */
+  align-items: flex-start; /* டாப்ல இருந்து கொஞ்சம் கேப் விட்டு ஆரம்பிக்க */
+  padding: 20px;
+  box-sizing: border-box;
+}
