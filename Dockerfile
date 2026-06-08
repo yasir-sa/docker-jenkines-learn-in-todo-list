@@ -1,5 +1,5 @@
-# 1. Frontend build
-FROM node:18 AS build-client
+# 1. Frontend build (Node 22-க்கு மாற்றப்பட்டுள்ளது)
+FROM node:22-alpine AS build-client
 WORKDIR /client
 COPY client/package*.json ./
 RUN npm install
