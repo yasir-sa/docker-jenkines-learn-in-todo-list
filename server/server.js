@@ -11,7 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 // 1. React oda production build ('dist' folder)-a static-ah serve panrom
-app.use(express.static(path.join(__dirname, '../client/dist')));
+// app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // 2. உங்களுடைய அசல் API Routes இங்கே இணைகிறது
 app.use('/api/todo', todoRoutes);
