@@ -22,10 +22,7 @@
 
 // module.exports = pool;
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 const { Pool } = require('pg');
 require('dotenv').config(); // .env ஃபைலில் உள்ள வேரியபிள்களை ரீட் செய்ய
 
