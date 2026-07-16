@@ -19,7 +19,7 @@ const Todo = () => {
     const fetchTodos = async () => {
         try {
             const response = await API.get('/'); // Base URL-க்கு பின்னாடி எதுவும் தேவையில்லை என்பதால் '/'
-            setTodos(response.data);
+            setTodos(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error("Error fetching todos:", error);
         }

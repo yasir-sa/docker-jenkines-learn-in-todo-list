@@ -11,7 +11,7 @@ import axios from 'axios';
 // baseURL-ஐ வெறும் '/' என்று கொடுத்தால், அது தற்போது ஆப் இயங்கும் 
 // அதே URL-ஐ (Render URL) எடுத்துக்கொள்ளும்.
 const API = axios.create({
-    baseURL: '/api/todo'
+    baseURL: import.meta.env.VITE_API_URL || '/api/todo'
 });
 
 export default API;
