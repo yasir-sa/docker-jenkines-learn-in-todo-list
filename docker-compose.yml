@@ -1,7 +1,4 @@
-version: '3.8'
-
 services:
-  # 1. Database Service (Postgres)
   postgres_db:
     image: postgres:15-alpine
     container_name: my-postgres-db
@@ -14,12 +11,11 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
-  # 2. Backend Service (Express Server)
-  backend:
+  app:
     build:
-      context: ./server
+      context: .
       dockerfile: Dockerfile
-    container_name: my-running-backend-compose
+    container_name: my-todo-app
     ports:
       - "5000:5000"
     environment:
@@ -29,19 +25,9 @@ services:
       - DB_HOST=postgres_db
       - DB_NAME=tododb
       - DB_PORT=5432
+      - NODE_ENV=production
     depends_on:
       - postgres_db
-
-  # 3. Frontend Service (React Vite)
-  frontend:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    container_name: my-running-frontend-compose
-    ports:
-      - "5173:5173"
-    depends_on:
-      - backend
 
 volumes:
   pgdata:
