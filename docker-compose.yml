@@ -25,6 +25,7 @@ services:
       - DB_HOST=postgres_db
       - DB_NAME=tododb
       - DB_PORT=5432
+      - DB_SSL=false
       - NODE_ENV=production
     depends_on:
       - postgres_db

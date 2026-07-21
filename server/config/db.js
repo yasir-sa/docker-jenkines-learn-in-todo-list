@@ -33,9 +33,7 @@ const pool = new Pool({
     database: process.env.DB_NAME,
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
-    ssl: {
-        rejectUnauthorized: false // Neon கிளவுட் டேட்டாபேஸ் கனெக்ட் ஆக இது மிகவும் முக்கியம்!
-    }
+    ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
 });
 
 // டேட்டாபேஸ் கூட முதல் குயேரி (Query) நடக்கும்போதோ அல்லது கனெக்ஷன் உருவாகும்போதோ இந்த மெசேஜ் காட்டும்
